@@ -50,7 +50,6 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         startTimer()
     }
 
-
     func carMotion() {
         let leftSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(leftSwipeDetected))
         let rightSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(rightSwipeDetected))
@@ -61,9 +60,8 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         self.view.addGestureRecognizer(rightSwipeRecognizer)
     }
     
-    
     func animateBackground() {
-        let backgroundImage = UIImage(named:"road")
+        let backgroundImage = UIImage(named: "road")
 
         // UIImageView 1
         let firstBackgroundImageView = UIImageView(image: backgroundImage)
@@ -108,7 +106,6 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         }
     }
     
- 
     func objectsFall() {
         var pointX = CGFloat(self.view.frame.size.width / CGFloat(5))
         var pointY = CGFloat(0) - self.view.frame.size.height / CGFloat(7)
@@ -134,11 +131,11 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
     func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) {_ in
             for view in self.fallingObjectsArray {
-                if self.carView.frame.intersects(view.layer.presentation()!.frame) {
+                let layerPresentationFrame = view.layer.presentation()?.frame
+                if let layerPresentationFrame = layerPresentationFrame, self.carView.frame.intersects(layerPresentationFrame) {
                     self.crashCarAppear()
                 }
             }
         }
     }
 }
-

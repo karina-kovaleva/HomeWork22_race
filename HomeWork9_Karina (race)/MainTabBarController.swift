@@ -13,7 +13,9 @@ class MainTabBarController: UITabBarController {
         super.viewDidLoad()
         generateTabBar()
         setTabBarAppearance()
-        self.selectedViewController = self.viewControllers![1] 
+        if self.viewControllers![1] != nil {
+            self.selectedViewController = self.viewControllers![1]
+        }
     }
     
     func generateTabBar() {
@@ -44,4 +46,3 @@ class MainTabBarController: UITabBarController {
         tabBar.unselectedItemTintColor = .tabBarItemLight
     }
 }
-
