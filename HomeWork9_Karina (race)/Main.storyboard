@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iH3-qA-7dB">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Item-->
+        <scene sceneID="ZWV-R2-xTw">
+            <objects>
+                <navigationController id="iH3-qA-7dB" customClass="MainNavigationController" customModule="HomeWork9_Karina__race_" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="i9a-QE-Xee"/>
+                    <navigationItem key="navigationItem" id="y1U-3A-Gtz"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="h4p-Vw-yra">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="uRi-WK-bdN" kind="relationship" relationship="rootViewController" id="p3u-mS-Zh9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zbF-qr-WFZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2343" y="7"/>
+        </scene>
+        <!--Start View Controller-->
+        <scene sceneID="kve-6O-7ic">
+            <objects>
+                <viewController storyboardIdentifier="StartViewController" id="uRi-WK-bdN" customClass="StartViewController" customModule="HomeWork9_Karina__race_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xcy-3q-Grp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1j-t3-wg2">
+                                <rect key="frame" x="196" y="458" width="28" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="1"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="toGameVCButtonPressed:" destination="uRi-WK-bdN" eventType="touchUpInside" id="Bqu-ii-SPS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZZP-Y1-2mn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bx2-Xi-Pli"/>
+                    <connections>
+                        <outlet property="startGameButton" destination="T1j-t3-wg2" id="get-NP-XJJ"/>
+                        <segue destination="hYe-JJ-A5g" kind="show" identifier="FromStartToGame" id="ux0-Xb-PqR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c2S-et-pvN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1500.0000000000002" y="6.6964285714285712"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="FwL-Jh-ihN">
+            <objects>
+                <viewController id="TyU-xb-PP0" customClass="RecordsViewController" customModule="HomeWork9_Karina__race_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gRA-9s-iXK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="bDv-QF-5pB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="TJ8-d3-7FC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JPy-7P-EjX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="548" y="656"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="hXp-IT-3Sh">
+            <objects>
+                <viewController id="VEJ-le-mZO" customClass="SettingsViewController" customModule="HomeWork9_Karina__race_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MZa-hU-iYe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="1uO-bD-1H0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="OSE-Ue-5Y2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fPo-3D-9SI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="548" y="7"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="ulL-y0-3aM">
+            <objects>
+                <viewController id="3NB-Pm-5DI" customClass="GameViewController" customModule="HomeWork9_Karina__race_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QkQ-di-O5b">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="WJM-gt-z2f"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="GIQ-BD-t0E"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OmP-R3-fHw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="548" y="-619"/>
+        </scene>
+        <!--Main Tab Bar Controller-->
+        <scene sceneID="xEl-Av-VKN">
+            <objects>
+                <tabBarController id="hYe-JJ-A5g" customClass="MainTabBarController" customModule="HomeWork9_Karina__race_" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="oU2-Jk-m1k"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fPX-GF-kue">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="TyU-xb-PP0" kind="relationship" relationship="viewControllers" id="OFb-GV-Jnd"/>
+                        <segue destination="VEJ-le-mZO" kind="relationship" relationship="viewControllers" id="pbn-U7-whl"/>
+                        <segue destination="3NB-Pm-5DI" kind="relationship" relationship="viewControllers" id="2sn-cN-peh"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nah-ZX-bWs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-670" y="7"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
