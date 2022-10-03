@@ -9,8 +9,16 @@ import UIKit
 
 class GameViewController: UIViewController, UICollisionBehaviorDelegate {
   
-    weak var timer: Timer?
-    
+    weak var timerForFallingObjects: Timer?
+    weak var timerGame: Timer?
+    lazy var timerLabel: UILabel = {
+        let timerLabel = UILabel()
+        timerLabel.text = "00:00"
+        timerLabel.textAlignment = .center
+        timerLabel.font = UIFont(name: "Marker Felt", size: 40)
+        timerLabel.frame = CGRect(x: (self.view.frame.width / 3) * 2, y: self.view.frame.size.height / 30, width: self.view.frame.width / 4, height: self.view.frame.size.height / 10)
+        return timerLabel
+    }()
     lazy var carView: UIImageView = {
         let carView = UIImageView()
         let image = UIImage(named: "yellowCar")
@@ -19,7 +27,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         carView.contentMode = .scaleAspectFit
         return carView
     }()
-
+    var count: Int = 0
     var fallingObjectsArray = [UIImageView]()
     let namesOfFallingObjects = ["human","policeCar","redCar","trashСan"]
     
@@ -39,7 +47,6 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-      
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,6 +55,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         carMotion()
         objectsFall()
         startTimer()
+        timerGameAdded()
     }
 
     func carMotion() {
@@ -129,7 +137,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
     }
     
     func startTimer() {
-        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) {_ in
+        timerForFallingObjects = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) {_ in
             for view in self.fallingObjectsArray {
                 let layerPresentationFrame = view.layer.presentation()?.frame
                 if let layerPresentationFrame = layerPresentationFrame, self.carView.frame.intersects(layerPresentationFrame) {
@@ -137,5 +145,29 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
                 }
             }
         }
+    }
+    
+    func timerGameAdded() {
+        timerGame = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
+        self.view.addSubview(timerLabel)
+    }
+    
+    @objc func timerCounter() -> Void {
+        count += 1
+        let time = secondToMinutesSeconds(seconds: count)
+        let timeString = makeTimeToString(minutes: time.0, seconds: time.1)
+        timerLabel.text = timeString
+    }
+    
+    func secondToMinutesSeconds(seconds: Int) -> (Int, Int) {
+        return (seconds / 60, seconds % 60)
+    }
+    
+    func makeTimeToString(minutes: Int, seconds: Int) -> String {
+        var timeString = ""
+        timeString += String(format: "%02d", minutes)
+        timeString += ":"
+        timeString += String(format: "%02d", seconds)
+        return timeString
     }
 }
