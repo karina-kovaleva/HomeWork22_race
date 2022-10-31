@@ -22,6 +22,7 @@
 		029DDEB228A68E46004C44D2 /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029DDEB128A68E46004C44D2 /* RecordsViewController.swift */; };
 		029DDEB428A6930A004C44D2 /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029DDEB328A6930A004C44D2 /* UIColor+extension.swift */; };
 		029DDEB628A6965E004C44D2 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029DDEB528A6965E004C44D2 /* MainNavigationController.swift */; };
+		02C91EE5290C6E6900A20183 /* RecordsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C91EE4290C6E6900A20183 /* RecordsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		029DDEB128A68E46004C44D2 /* RecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
 		029DDEB328A6930A004C44D2 /* UIColor+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
 		029DDEB528A6965E004C44D2 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		02C91EE4290C6E6900A20183 /* RecordsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				0269E88028EC3E06006CA273 /* Results.swift */,
+				02C91EE4290C6E6900A20183 /* RecordsTableViewCell.swift */,
 				0269E88428EC40FC006CA273 /* Settings.swift */,
 			);
 			path = Classes;
@@ -223,6 +226,7 @@
 				0269E88528EC40FC006CA273 /* Settings.swift in Sources */,
 				0269E88728EC4DA8006CA273 /* UserDefaults+extension.swift in Sources */,
 				029DDEB228A68E46004C44D2 /* RecordsViewController.swift in Sources */,
+				02C91EE5290C6E6900A20183 /* RecordsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
