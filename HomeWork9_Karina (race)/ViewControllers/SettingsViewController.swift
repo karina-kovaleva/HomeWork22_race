@@ -144,7 +144,6 @@ class SettingsViewController: UIViewController {
     
     func saveSettings() {
         guard let nickname = textFieldForName.text else { return }
-        
         let settings = Settings(name: nickname, car: typesOfCars[carIndex], obstacles: typesOfObstacles[obstacleIndex])
         UserDefaults.standard.set(encodable: settings, forKey: "settings")
     }
@@ -198,6 +197,5 @@ class SettingsViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         saveSettings()
-        
     }
 }

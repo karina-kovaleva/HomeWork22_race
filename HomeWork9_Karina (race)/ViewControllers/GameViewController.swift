@@ -169,7 +169,6 @@ class GameViewController: UIViewController {
         timerGame?.invalidate()
         timerForFallingObjects?.invalidate()
         guard let nickname = settings?.name else { return }
-        
         guard let text = timerLabel.text else { return }
         let records = Results(name: nickname, score: text)
         var recordsArray = UserDefaults.standard.value([Results].self, forKey: "records") ?? [Results]()
@@ -178,11 +177,7 @@ class GameViewController: UIViewController {
         count = 0
         timerLabel.text = "00:00"
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         animateBackground()
@@ -200,7 +195,6 @@ class GameViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         gameOver()
-        
     }
 
     @IBAction func leftSwipeDetected() {
@@ -216,5 +210,4 @@ class GameViewController: UIViewController {
         } , completion: nil)
         roadsideExit()
     }
-
 }
