@@ -10,9 +10,8 @@ import UIKit
 class RecordsTableViewCell: UITableViewCell {
 
     static let id = "RecordsTableViewCell"
-    static let nib = UINib(nibName: id, bundle: nil)
-    
-    var delegate: RecordsViewControllerDelegate?
+
+    weak var delegate: RecordsViewControllerDelegate?
     
     var labelForName: UILabel = {
         var labelForName = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
@@ -79,5 +78,4 @@ class RecordsTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
