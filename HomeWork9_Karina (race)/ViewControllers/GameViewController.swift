@@ -191,9 +191,9 @@ class GameViewController: UIViewController {
         restoreSettings()
         objectsFall()
     }
-
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         gameOver()
     }
 

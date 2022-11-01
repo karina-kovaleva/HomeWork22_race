@@ -7,7 +7,7 @@
 
 import UIKit
          
-protocol RecordsViewControllerDelegate {
+protocol RecordsViewControllerDelegate: AnyObject {
     func changeColor(color: UIColor)
 }
 
